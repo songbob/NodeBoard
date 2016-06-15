@@ -8,7 +8,7 @@ var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 
 // database
-mongoose.connect('mongodb://test:testtest@ds039095.mlab.com:39095/azure0777');
+mongoose.connect(process.env.MONGO_DB);
 var db = mongoose.connection;
 db.once("open",function () {
   console.log("DB connected!");
